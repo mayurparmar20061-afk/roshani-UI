@@ -1,0 +1,1304 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Roshani Computer Institute — AutoCAD, BIM & Technical Training in Gujarat
+  </title>
+  <meta name="description"
+    content="Roshani Computer Institute is Gujarat's premier Autodesk Authorized training center offering AutoCAD, Revit BIM, SolidWorks, CATIA, 3ds Max and IT courses with placement support." />
+  <meta name="keywords"
+    content="AutoCAD training Gujarat, BIM Revit course, SolidWorks institute, Roshani Computer Institute, CATIA training Vadodara" />
+  <meta property="og:title" content="Roshani Computer Institute" />
+  <meta property="og:description"
+    content="India's Premier AutoCAD & BIM Training Center — Autodesk Authorized Reseller & Trainer" />
+  <meta property="og:image" content="assets/logo.png" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=6" />
+</head>
+
+<body>
+  <!-- ───────────────────────────────────────────────
+     HEADER (Educational Theme)
+  ──────────────────────────────────────────────── -->
+  <header id="main-header">
+    <div class="container nav-container">
+      <!-- Logo -->
+      <div class="logo-wrap" onclick="navigateTo('home')" title="Roshani Computer Institute">
+        <img src="assets/logo.png" alt="Roshani Computer Institute Logo" id="header-logo" />
+      </div>
+
+
+
+      <!-- Desktop Navigation (Centered) -->
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <button class="nav-item active" data-tab="home" onclick="navigateTo('home')">
+          Home
+        </button>
+        <button class="nav-item" data-tab="courses" onclick="navigateTo('courses')">
+          Courses
+        </button>
+        <button class="nav-item" data-tab="admission" onclick="navigateTo('admission')">
+          Admission
+        </button>
+        <button class="nav-item" data-tab="about" onclick="navigateTo('about')">
+          About Us
+        </button>
+        <button class="nav-item" data-tab="contact" onclick="navigateTo('contact')">
+          Contact
+        </button>
+      </nav>
+
+      <!-- Theme Toggle Button & Auth / User Buttons -->
+      <div style="display: flex; align-items: center;">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <div class="nav-auth" id="nav-auth-area">
+          <button class="btn-signin" id="btn-signin" onclick="showSignIn()">
+            Sign In
+          </button>
+          <button class="btn-signup" id="btn-signup" onclick="showSignUp()">
+            Get Started
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <button class="mobile-nav-item active" data-tab="home" onclick="navigateTo('home')">
+        🏠 Home
+      </button>
+      <button class="mobile-nav-item" data-tab="courses" onclick="navigateTo('courses')">
+        📚 Courses
+      </button>
+      <button class="mobile-nav-item" data-tab="admission" onclick="navigateTo('admission')">
+        📝 Admission
+      </button>
+      <button class="mobile-nav-item" data-tab="about" onclick="navigateTo('about')">
+        🏛️ About
+      </button>
+      <button class="mobile-nav-item" data-tab="contact" onclick="navigateTo('contact')">
+        📞 Contact
+      </button>
+      <div class="mobile-auth-section">
+        <button class="btn-signin" style="width: 100%" onclick="showSignIn()">
+          Sign In
+        </button>
+        <button class="btn-signup" style="width: 100%" onclick="showSignUp()">
+          Get Started
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ───────────────────────────────────────────────
+     MAIN
+  ──────────────────────────────────────────────── -->
+  <main>
+    <!-- ══════════════════════════════════════════════
+     HOME
+    ══════════════════════════════════════════════ -->
+    <section id="section-home" class="tab-section active">
+
+      <!-- Premium Byju's Style Hero Section -->
+      <div class="hero-split-section">
+        <!-- Floating Animated Blobs -->
+        <div class="hero-blobs">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+          <div class="blob blob-3"></div>
+        </div>
+
+        <div class="container hero-split-grid">
+          <!-- Left Column: Content & Streams -->
+          <div class="hero-left-content">
+            <span class="hero-badge">Autodesk Authorized Training Centre</span>
+            <h1 class="hero-main-title">Learn from Gujarat's <br>Best Technical Experts to <br><span
+                class="text-accent-teal" id="typing-text"></span><span class="typing-cursor">|</span></h1>
+            <p class="hero-subtext">
+              Master industrial CAD design, structural engineering, Revit BIM modeling, and IT systems with Gujarat's
+              premier Autodesk training center. Personalized class schedules and placement cell support.
+            </p>
+
+            <!-- Explore Courses Dropdown (Moved from Navbar) -->
+            <div class="explore-dropdown-container"
+              style="display: inline-block; margin-bottom: 2.5rem; margin-left: 0;">
+              <button class="btn-explore" onclick="toggleExploreDropdown()" aria-label="Explore Courses"
+                style="font-size: 1rem; padding: 0.75rem 1.75rem; border-radius: 8px;">
+                Explore Courses <svg class="dropdown-caret" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="explore-dropdown-menu" id="explore-dropdown-menu">
+                <button onclick="selectQuickCategory('architecture')">🏛️ Architecture & BIM</button>
+                <button onclick="selectQuickCategory('civil')">🏗️ Civil Engineering</button>
+                <button onclick="selectQuickCategory('mechanical')">⚙️ Mechanical Engineering</button>
+                <button onclick="selectQuickCategory('mep')">⚡ Electrical / MEP</button>
+                <button onclick="selectQuickCategory('it')">💻 Software & IT</button>
+                <button onclick="selectQuickCategory('ai')">🤖 AI & Data</button>
+                <button onclick="selectQuickCategory('arvr')">🥽 AR / VR Technologies</button>
+                <button onclick="selectQuickCategory('graphic')">🎨 Graphic Design</button>
+              </div>
+            </div>
+
+            <!-- Animated Statistics Counters -->
+            <div class="hero-stats-row">
+              <div class="hero-stat-item">
+                <div>
+                  <span class="stat-num" data-target="10000">0</span><span class="stat-suffix">+</span>
+                </div>
+                <span class="stat-label">Students Trained</span>
+              </div>
+              <div class="hero-stat-item">
+                <div>
+                  <span class="stat-num" data-target="500">0</span><span class="stat-suffix">+</span>
+                </div>
+                <span class="stat-label">Placements</span>
+              </div>
+              <div class="hero-stat-item">
+                <div>
+                  <span class="stat-num" data-target="100">0</span><span class="stat-suffix">+</span>
+                </div>
+                <span class="stat-label">Courses Offered</span>
+              </div>
+              <div class="hero-stat-item">
+                <div>
+                  <span class="stat-num" data-target="95">0</span><span class="stat-suffix">%</span>
+                </div>
+                <span class="stat-label">Success Rate</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Grid (Polished Card style) -->
+      <div class="stats-cards-strip">
+        <div class="container">
+          <div class="stats-cards-grid">
+            <div class="stats-card">
+              <div class="sc-num">10,000+</div>
+              <div class="sc-lbl">Trained Professionals</div>
+              <div class="sc-desc">Working in leading civil & mechanical engineering companies.</div>
+            </div>
+            <div class="stats-card">
+              <div class="sc-num">20+</div>
+              <div class="sc-lbl">Years Experience</div>
+              <div class="sc-desc">Of excellence in technical coaching & CAD education.</div>
+            </div>
+            <div class="stats-card">
+              <div class="sc-num">15+</div>
+              <div class="sc-lbl">Govt. Partners</div>
+              <div class="sc-desc">Collaborating on skill development initiatives.</div>
+            </div>
+            <div class="stats-card">
+              <div class="sc-num">9+</div>
+              <div class="sc-lbl">University Partners</div>
+              <div class="sc-desc">Providing academic certification and degree support.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popular Courses / Batches -->
+      <div class="section-wrapper">
+        <div class="container">
+          <div class="section-header">
+            <h2>Popular Batches</h2>
+            <p>
+              Industry-aligned technical programs designed by Autodesk
+              Certified instructors for real-world career success.
+            </p>
+          </div>
+          <div class="courses-grid-horizontal" id="home-courses-grid"></div>
+          <div class="cta-center" style="text-align: center; margin-top: 3.5rem;">
+            <button class="btn-primary" style="font-size: 16px; padding: 0.9rem 2.5rem; border-radius: 12px;"
+              onclick="navigateTo('courses')">
+              View All Batches →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parallax CTA Section -->
+      <div class="parallax-cta-section">
+        <div class="container">
+          <div class="parallax-cta-content">
+            <span class="pcta-badge">New Batch Starting Soon</span>
+            <h2>Start Your Learning Journey Today</h2>
+            <p>Enroll in AutoCAD, Revit BIM, and SolidWorks programs with structured curriculum, live projects, and
+              career guidance from Gujarat's most experienced technical educators.</p>
+            <div class="pcta-buttons">
+              <button class="btn-primary" style="padding: 1rem 2.5rem; font-size: 16px; border-radius: 8px;"
+                onclick="navigateTo('admission')">Enrol Now</button>
+              <button class="btn-secondary" style="padding: 1rem 2.5rem; font-size: 16px; border-radius: 8px;"
+                onclick="navigateTo('contact')">Request Call Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partners Marquee -->
+      <div class="partners-marquee-section">
+        <div class="container">
+          <div class="section-header" style="margin-bottom: 2rem">
+            <h2>Our Placement Partners</h2>
+            <p>
+              Recognized and affiliated with Gujarat's top universities and industrial firms.
+            </p>
+          </div>
+        </div>
+        <div class="marquee-container">
+          <div class="marquee-gradient-l"></div>
+          <div class="marquee-content" id="home-marquee-track"></div>
+          <div class="marquee-gradient-r"></div>
+        </div>
+      </div>
+
+
+      <!-- FAQ Section (Premium Split Layout) -->
+      <div class="faq-section">
+        <div class="container">
+          <div class="faq-split-grid">
+            <!-- Left Column: Branding and Info -->
+            <div class="faq-left-column">
+              <span class="faq-badge">Still Have Questions?</span>
+              <h2>Frequently Asked Questions</h2>
+              <p>
+                Got questions about enrollment, courses, or certifications? We've compiled the most common queries to
+                help you make the right choice.
+              </p>
+              <div class="faq-contact-card">
+                <h5>Need instant help?</h5>
+                <p>Chat with our academic counselor directly for guidance.</p>
+                <button class="btn-primary" onclick="navigateTo('contact')"
+                  style="margin-top: 1rem; width: 100%; border-radius: 8px;">Get in Touch →</button>
+              </div>
+            </div>
+
+            <!-- Right Column: Accordions -->
+            <div class="faq-right-column">
+              <div class="faq-grid">
+                <div class="faq-item active" onclick="toggleFaq(this)">
+                  <div class="faq-question">What certifications will I receive?</div>
+                  <div class="faq-answer">
+                    You will receive an official, globally recognized training certification from Roshani Computer
+                    Institute. As an Autodesk Authorized Training Centre, our AutoCAD, Revit, and other technical
+                    certifications are accepted worldwide.
+                  </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                  <div class="faq-question">Does Roshani Computer Institute offer placement assistance?</div>
+                  <div class="faq-answer">
+                    Yes! We have a dedicated placement support cell that maintains active ties with over 500
+                    engineering,
+                    design, and software firms across Gujarat and India. We provide resume building, mock interviews,
+                    and
+                    direct placement opportunities.
+                  </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                  <div class="faq-question">Are classes available in online or offline mode?</div>
+                  <div class="faq-answer">
+                    We offer both offline classes at our high-end Ahmedabad campus equipped with dual monitors and
+                    licensed
+                    software, as well as interactive live online batches with full mentor support.
+                  </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                  <div class="faq-question">Who will be teaching the courses?</div>
+                  <div class="faq-answer">
+                    Our faculty consists of Autodesk and Adobe certified professionals, industry specialists, and
+                    experienced engineers who have over 15+ years of active field experience.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+     COURSES
+    ══════════════════════════════════════════════ -->
+    <section id="section-courses" class="tab-section">
+      <div class="section-wrapper">
+        <div class="container">
+          <div class="section-header">
+            <h2>Course Directory</h2>
+            <p>
+              Browse our complete catalog of professional technical training programs.
+            </p>
+          </div>
+          <!-- Control Bar -->
+          <div class="directory-control-bar">
+            <div class="search-input-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <input type="text" id="course-search" placeholder="Search courses, tools or instructors…"
+                autocomplete="off" />
+            </div>
+            <div class="filter-tabs">
+              <button class="filter-tab active" data-filter="all">All</button>
+              <button class="filter-tab" data-filter="architecture">🏛️ Architecture & BIM</button>
+              <button class="filter-tab" data-filter="civil">🏗️ Civil Engineering</button>
+              <button class="filter-tab" data-filter="mechanical">⚙️ Mechanical Engineering</button>
+              <button class="filter-tab" data-filter="mep">⚡ Electrical / MEP</button>
+              <button class="filter-tab" data-filter="manufacturing">🏭 Manufacturing & Industrial</button>
+              <button class="filter-tab" data-filter="it">💻 Software & IT</button>
+              <button class="filter-tab" data-filter="ai">🤖 AI & Data</button>
+              <button class="filter-tab" data-filter="arvr">🥽 AR / VR Technologies</button>
+              <button class="filter-tab" data-filter="graphic">🎨 Graphic Design</button>
+              <button class="filter-tab" data-filter="corporate">🏢 Corporate & Industrial</button>
+              <button class="filter-tab" data-filter="certification">📜 Certification Programs</button>
+              <button class="filter-tab" data-filter="placement">📈 Placement & Careers</button>
+            </div>
+          </div>
+          <!-- Grid -->
+          <div class="directory-grid" id="directory-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+     ADMISSION
+    ══════════════════════════════════════════════ -->
+    <section id="section-admission" class="tab-section">
+      <div class="section-wrapper">
+        <div class="container">
+          <!-- Form -->
+          <div id="admission-form-wrapper">
+            <div class="section-header">
+              <h2>Student Admission</h2>
+              <p>
+                Fill out the form below to begin your enrollment. Our
+                counsellors will contact you within 24 hours.
+              </p>
+            </div>
+            <div class="admission-card-wrapper">
+              <div class="admission-header-banner">
+                <img src="assets/logo.png" alt="Roshani Logo" style="
+                      height: 80px;
+                      object-fit: contain;
+                      margin-bottom: 0.5rem;
+                      filter: brightness(0) invert(1);
+                    " />
+                <h3 style="font-size: 22px">Roshani Computer Institute</h3>
+                <p style="
+                      font-size: 14px;
+                      color: rgba(255,255,255,0.75);
+                      margin-top: 0.25rem;
+                    ">
+                  Autodesk Authorized Reseller & Training Centre
+                </p>
+              </div>
+              <div class="admission-body">
+                <form id="admission-form" onsubmit="handleAdmissionSubmit(event)" novalidate>
+                  <div class="form-grid">
+                    <div class="form-group">
+                      <label for="adm-name">Full Name *</label>
+                      <input type="text" id="adm-name" placeholder="e.g. Rohan Patel" required autocomplete="name" />
+                    </div>
+                    <div class="form-group">
+                      <label for="adm-dob">Date of Birth</label>
+                      <input type="date" id="adm-dob" autocomplete="bday" />
+                    </div>
+                    <div class="form-group">
+                      <label for="adm-email">Email Address *</label>
+                      <input type="email" id="adm-email" placeholder="you@example.com" required autocomplete="email" />
+                    </div>
+                    <div class="form-group">
+                      <label for="adm-phone">Mobile Number *</label>
+                      <input type="tel" id="adm-phone" placeholder="+91 98765 43210" required autocomplete="tel" />
+                    </div>
+                    <div class="form-group">
+                      <label for="adm-qualification">Highest Qualification</label>
+                      <select id="adm-qualification">
+                        <option value="">Select qualification</option>
+                        <option>10th / SSC</option>
+                        <option>12th / HSC</option>
+                        <option>Diploma</option>
+                        <option>B.Tech / BE</option>
+                        <option>B.Arch</option>
+                        <option>M.Tech / ME</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="admission-course">Course of Interest *</label>
+                      <select id="admission-course" required>
+                        <option value="">Select a course</option>
+                        <option>Autodesk AutoCAD 2D & 3D</option>
+                        <option>Autodesk Revit BIM Architecture</option>
+                        <option>SolidWorks Mechanical Design</option>
+                        <option>CATIA V5 Surface & Aerospace</option>
+                        <option>Autodesk 3ds Max & V-Ray Rendering</option>
+                        <option>Rhinoceros 3D & Grasshopper</option>
+                        <option>Adobe Photoshop & Illustrator</option>
+                        <option>Python & Data Analytics</option>
+                        <option>Electrical AutoCAD & ETAP</option>
+                        <option>Primavera P6 Project Management</option>
+                        <option>Tally Prime & GST Accounting</option>
+                        <option>Autodesk Navisworks Clash Detection</option>
+                        <option>MongoDB Database Design & Administration</option>
+                      </select>
+                    </div>
+                    <div class="form-group full-width">
+                      <label for="adm-address">Address</label>
+                      <textarea id="adm-address" rows="3" placeholder="Your residential address…"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                      <label for="adm-message">Message / Special Requirements</label>
+                      <textarea id="adm-message" rows="2"
+                        placeholder="Any additional notes for our counsellors…"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-buttons-box">
+                    <button type="button" class="btn-secondary" onclick="
+                          document.getElementById('admission-form').reset()
+                        ">
+                      Reset
+                    </button>
+                    <button type="submit" class="btn-primary" id="adm-submit-btn">
+                      Submit Enrollment →
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- Receipt -->
+          <div id="admission-receipt" style="display: none">
+            <div class="section-header">
+              <h2>Enrollment Confirmed! 🎉</h2>
+              <p>
+                Your digital student I-Card has been generated. Our team will
+                contact you shortly.
+              </p>
+            </div>
+            <div class="printable-card-outer" id="printable-card">
+              <div class="printable-card-decor-1"></div>
+              <div class="printable-card-decor-2"></div>
+              <div class="card-header-top">
+                <div class="card-header-titles">
+                  <h3>ROSHANI COMPUTER INSTITUTE</h3>
+                  <span>AUTODESK AUTHORIZED TRAINING CENTRE — GUJARAT</span>
+                </div>
+                <div class="card-status-badge">ENROLLED</div>
+              </div>
+              <div class="card-body-details">
+                <div class="card-student-pic">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="rgba(255,255,255,0.3)"
+                    stroke="rgba(255,255,255,0.5)" stroke-width="1.5">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                </div>
+                <div class="card-data-fields">
+                  <div class="card-field">
+                    <span class="label">Student ID</span>
+                    <span class="val" id="receipt-student-id"></span>
+                  </div>
+                  <div class="card-field">
+                    <span class="label">Full Name</span>
+                    <span class="val" id="receipt-name"></span>
+                  </div>
+                  <div class="card-field">
+                    <span class="label">Email</span>
+                    <span class="val" id="receipt-email" style="font-size: 10px"></span>
+                  </div>
+                  <div class="card-field">
+                    <span class="label">Mobile</span>
+                    <span class="val" id="receipt-phone"></span>
+                  </div>
+                  <div class="card-field">
+                    <span class="label">Enrolled Course</span>
+                    <span class="val curriculum" id="receipt-course"></span>
+                  </div>
+                  <div class="card-field">
+                    <span class="label">Enrollment Date</span>
+                    <span class="val" id="receipt-date"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer-bottom">
+                <div class="card-barcode-box">
+                  <div class="barcode-lines" id="barcode-lines"></div>
+                  <span class="barcode-text" id="receipt-barcode-text"></span>
+                </div>
+                <div class="stamp-box">
+                  <div class="stamp-circle">RCI</div>
+                </div>
+              </div>
+            </div>
+            <div style="
+                  display: flex;
+                  gap: 1rem;
+                  justify-content: center;
+                  margin-top: 1.5rem;
+                  flex-wrap: wrap;
+                ">
+              <button class="btn-primary" onclick="downloadReceipt()">
+                🖨️ Print I-Card
+              </button>
+              <button class="btn-secondary" onclick="resetAdmission()">
+                ← New Enrollment
+              </button>
+              <button class="btn-secondary" onclick="navigateTo('courses')">
+                Browse More Courses
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+     ABOUT
+    ══════════════════════════════════════════════ -->
+    <section id="section-about" class="tab-section">
+      <!-- About Banner -->
+      <div style="
+            background: linear-gradient(135deg, #1B3A6B 0%, #234B8C 50%, #1E6091 100%);
+            padding: 5rem 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+          ">
+        <div class="container">
+          <img src="assets/logo.png" alt="Roshani Logo"
+            style="height: 100px; object-fit: contain; margin-bottom: 1.5rem" />
+          <h2 style="font-size: 36px; margin-bottom: 0.75rem; color: white;">
+            About Roshani Computer Institute
+          </h2>
+          <p style="
+                color: rgba(255,255,255,0.7);
+                max-width: 680px;
+                margin: 0 auto;
+                font-size: 15px;
+                line-height: 1.7;
+              ">
+            Established over two decades ago, Roshani Computer Institute has
+            been Gujarat's leading Autodesk authorized training and software
+            reselling center. We bridge the gap between academic learning and
+            industry-grade technical proficiency.
+          </p>
+        </div>
+      </div>
+      <!-- Committee Section -->
+      <div class="section-wrapper committee-wrapper">
+        <div class="container">
+          <div class="section-header">
+            <h2>Our Leadership Committee</h2>
+            <p>
+              Meet the dedicated professionals guiding Roshani's mission of excellence.
+            </p>
+          </div>
+          <div class="committee-grid">
+            <!-- Sidebar -->
+            <div class="committee-sidebar">
+              <button class="committee-btn active" data-member="dipak" onclick="setCommitteeMember('dipak')">
+                <h4>Dipak O. Shah</h4>
+                <p>Founder & Director</p>
+              </button>
+              <button class="committee-btn" data-member="jagruti" onclick="setCommitteeMember('jagruti')">
+                <h4>Jagruti D. Shah</h4>
+                <p>Co-Founder & Academic Head</p>
+              </button>
+              <button class="committee-btn" data-member="nachiket" onclick="setCommitteeMember('nachiket')">
+                <h4>Nachiket D. Shah</h4>
+                <p>Technical Director</p>
+              </button>
+              <button class="committee-btn" data-member="ujala" onclick="setCommitteeMember('ujala')">
+                <h4>Ujala D. Shah</h4>
+                <p>Creative & Design Lead</p>
+              </button>
+            </div>
+            <!-- Content Card -->
+            <div class="committee-content-card" id="committee-card">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Government Approvals -->
+      <div class="section-wrapper">
+        <div class="container">
+          <div class="section-header">
+            <h2>Government Approvals</h2>
+            <p>
+              Proudly recognized and partnered with leading government bodies across India and Gujarat.
+            </p>
+          </div>
+          <div class="gov-grid" id="gov-logos-grid"></div>
+        </div>
+      </div>
+      <!-- University Partners Marquee -->
+      <div class="partners-marquee-section">
+        <div class="container">
+          <div class="section-header" style="margin-bottom: 2rem">
+            <h2>University Affiliations</h2>
+            <p>
+              Courses recognized for academic credit at these prestigious institutions.
+            </p>
+          </div>
+        </div>
+        <div class="marquee-container">
+          <div class="marquee-gradient-l"></div>
+          <div class="marquee-content" id="about-marquee-track"></div>
+          <div class="marquee-gradient-r"></div>
+        </div>
+      </div>
+      <!-- Why Choose Roshani -->
+      <div class="section-wrapper" style="background: var(--bg-primary)">
+        <div class="container">
+          <div class="section-header">
+            <h2>Why Choose Roshani?</h2>
+            <p>
+              We combine industry expertise with modern pedagogy to create exceptional learning outcomes.
+            </p>
+          </div>
+          <div style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+              ">
+            <div style="
+                   background: var(--bg-card);
+                   border-radius: 20px;
+                   padding: 2.5rem;
+                   border: 1px solid var(--border-color);
+                   box-shadow: var(--shadow-sm);
+                   text-align: center;
+                   transition: all 0.3s ease;
+                 ">
+              <div style="font-size: 40px; margin-bottom: 1rem">🏆</div>
+              <h3 style="font-size: 18px; margin-bottom: 0.5rem; color: var(--text-dark)">
+                Autodesk Authorized
+              </h3>
+              <p style="font-size: 14px; color: var(--text-medium)">
+                Official Autodesk reseller and training partner for all flagship products.
+              </p>
+            </div>
+            <div style="
+                   background: var(--bg-card);
+                   border-radius: 20px;
+                   padding: 2.5rem;
+                   border: 1px solid var(--border-color);
+                   box-shadow: var(--shadow-sm);
+                   text-align: center;
+                   transition: all 0.3s ease;
+                 ">
+              <div style="font-size: 40px; margin-bottom: 1rem">🎯</div>
+              <h3 style="font-size: 18px; margin-bottom: 0.5rem; color: var(--text-dark)">
+                100% Placement Support
+              </h3>
+              <p style="font-size: 14px; color: var(--text-medium)">
+                Dedicated placement cell with direct connections to 500+ hiring companies.
+              </p>
+            </div>
+            <div style="
+                  background: var(--bg-card);
+                  border-radius: 20px;
+                  padding: 2.5rem;
+                  border: 1px solid var(--border-color);
+                  box-shadow: var(--shadow-sm);
+                  text-align: center;
+                ">
+              <div style="font-size: 40px; margin-bottom: 1rem">📜</div>
+              <h3 style="font-size: 18px; margin-bottom: 0.5rem; color: var(--text-dark)">
+                International Certificates
+              </h3>
+              <p style="font-size: 14px; color: var(--text-medium)">
+                Earn globally recognized certifications accepted across 50+ countries.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+     CONTACT
+    ══════════════════════════════════════════════ -->
+    <section id="section-contact" class="tab-section">
+      <div class="section-wrapper">
+        <div class="container">
+          <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>
+              We're here to help. Reach out for course counselling, admissions or any other queries.
+            </p>
+          </div>
+          <div class="contact-grid">
+            <!-- Info Panel -->
+            <div class="contact-info-panel">
+              <div class="contact-info-card">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <div class="info-details">
+                    <h4>Main Campus</h4>
+                    <p>
+                      Roshni Technology, Near Karelibaug Water Tank, Vadodara – 390018
+                    </p>
+                  </div>
+                </div>
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.59 4.9 2 2 0 0 1 3.56 2.73h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </div>
+                  <div class="info-details">
+                    <h4>Phone & WhatsApp</h4>
+                    <p>
+                      <a href="tel:+919408788205">+91 94087 88205</a><br />
+                      <a href="tel:+919375805150">+91 93758 05150</a><br />
+                      <a href="tel:+919408749958">+91 94087 49958</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </div>
+                  <div class="info-details">
+                    <h4>Email</h4>
+                    <p>
+                      <a href="mailto:roshani@roshani.net">roshani@roshani.net</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Mock Map -->
+              <div class="mock-map-box">
+                <div class="map-decor-line map-decor-h" style="top: 30%"></div>
+                <div class="map-decor-line map-decor-h" style="top: 60%"></div>
+                <div class="map-decor-line map-decor-v" style="left: 30%"></div>
+                <div class="map-decor-line map-decor-v" style="left: 70%"></div>
+                <div class="map-marker">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                  Roshani Computer Institute
+                </div>
+              </div>
+            </div>
+            <!-- Inquiry Form -->
+            <div>
+              <div class="contact-info-card" style="padding: 2rem">
+                <h3 style="font-size: 22px; margin-bottom: 0.5rem">
+                  Send Us a Message
+                </h3>
+                <p style="
+                      font-size: 14px;
+                      color: var(--text-light);
+                      margin-bottom: 1.5rem;
+                    ">
+                  Have a question? We'll get back to you within 24 hours.
+                </p>
+                <form id="contact-form" onsubmit="handleContactSubmit(event)" novalidate>
+                  <div style="display: flex; flex-direction: column; gap: 1rem">
+                    <div class="form-group">
+                      <label for="contact-name">Your Name *</label>
+                      <input type="text" id="contact-name" placeholder="Rohan Patel" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="contact-email">Email Address *</label>
+                      <input type="email" id="contact-email" placeholder="you@example.com" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="contact-phone">Phone Number</label>
+                      <input type="tel" id="contact-phone" placeholder="+91 98765 43210" />
+                    </div>
+                    <div class="form-group">
+                      <label for="contact-subject">Subject</label>
+                      <select id="contact-subject">
+                        <option value="">Select a topic</option>
+                        <option>Course Enquiry</option>
+                        <option>Admission Process</option>
+                        <option>Software Purchase</option>
+                        <option>Corporate Training</option>
+                        <option>Placement Query</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="contact-message">Your Message *</label>
+                      <textarea id="contact-message" rows="5" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="padding: 0.9rem; border-radius: 12px">
+                      Send Message →
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials / Feedback Section -->
+    <section class="section-wrapper" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Student Testimonials</h2>
+          <p>
+            Hear from our students who transformed their careers with our professional training programs.
+          </p>
+        </div>
+        <div class="feedback-grid">
+          <!-- Card 1 -->
+          <div class="feedback-card">
+            <div>
+              <div style="color: #f59e0b; margin-bottom: 1rem; display: flex; gap: 2px;">
+                ★ ★ ★ ★ ★
+              </div>
+              <p class="feedback-quote">
+                "The AutoCAD and BIM courses at Roshani Technologies were instrumental in my placement. The hands-on
+                training with real-world blueprints made all the difference."
+              </p>
+            </div>
+            <div class="feedback-user">
+              <div class="feedback-info">
+                <h5>Amit Patel</h5>
+                <p>Revit BIM Architecture</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="feedback-card">
+            <div>
+              <div style="color: #f59e0b; margin-bottom: 1rem; display: flex; gap: 2px;">
+                ★ ★ ★ ★ ★
+              </div>
+              <p class="feedback-quote">
+                "Excellent faculty and outstanding learning environment. The SolidWorks mechanical design classes
+                prepared me perfectly for my industry role."
+              </p>
+            </div>
+            <div class="feedback-user">
+              <div class="feedback-info">
+                <h5>Siddharth Mehta</h5>
+                <p>SolidWorks Mechanical Design</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="feedback-card">
+            <div>
+              <div style="color: #f59e0b; margin-bottom: 1rem; display: flex; gap: 2px;">
+                ★ ★ ★ ★ ★
+              </div>
+              <p class="feedback-quote">
+                "Highly recommended for engineering students. The syllabus is perfectly aligned with what top employers
+                look for. The instructors are extremely supportive."
+              </p>
+            </div>
+            <div class="feedback-user">
+              <div class="feedback-info">
+                <h5>Neha Desai</h5>
+                <p>AutoCAD 2D & 3D</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ───────────────────────────────────────────────
+     FOOTER
+  ──────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-column">
+          <div>
+            <div class="footer-logo-title">
+              <span>ROSHANI</span>
+              <span style="font-weight: 500; opacity: 0.7; font-size: 14px">Computer Institute</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Gujarat's premier Autodesk Authorized Reseller and Training
+            Centre, empowering 10,000+ professionals with industry-ready
+            technical skills since 2002.
+          </p>
+          <div class="footer-gst-box">
+            <span class="footer-gst-lbl">GST</span>
+            <span class="footer-gst-val">24AANCR6249L17S</span>
+          </div>
+          <div class="social-links-row">
+            <a href="https://share.google/jD66tTSmSGSe6eooy" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn" title="Instagram">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://share.google/ltagtktq9gKMXEkrz" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn" title="Facebook">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="https://share.google/M8FfZs36yFtsYOmFg" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn" title="YouTube">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                <polygon points="9.75,15.02 15.5,12 9.75,8.98" fill="currentColor" />
+              </svg>
+            </a>
+            <a href="https://share.google/6Fsb31bgk8CmpVWby" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn" title="LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><button onclick="navigateTo('home')">Home</button></li>
+            <li>
+              <button onclick="navigateTo('courses')">All Batches</button>
+            </li>
+            <li>
+              <button onclick="navigateTo('admission')">Apply Now</button>
+            </li>
+            <li><button onclick="navigateTo('about')">About Us</button></li>
+            <li><button onclick="navigateTo('contact')">Contact</button></li>
+            <li><button onclick="showSignUp()">Student Portal</button></li>
+            <li><a href="admin.html" target="_blank" style="font-size: 0.88rem; color: rgba(255,255,255,0.55); transition: var(--transition); display: inline-block; padding: 3px 0;" onmouseover="this.style.color='var(--accent-pw)'; this.style.paddingLeft='5px'" onmouseout="this.style.color='rgba(255,255,255,0.55)'; this.style.paddingLeft='0'">Admin Portal</a></li>
+          </ul>
+        </div>
+        <!-- Contact Info -->
+        <div class="footer-column">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Roshni Technology, Near Karelibaug Water Tank, Vadodara – 390018
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5" />
+              </svg>
+              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                <a href="tel:+919408788205">+91 94087 88205</a>
+                <a href="tel:+919375805150">+91 93758 05150</a>
+                <a href="tel:+919408749958">+91 94087 49958</a>
+              </div>
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <a href="mailto:roshani@roshani.net">roshani@roshani.net</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Autodesk Products -->
+        <div class="footer-column">
+          <h4>Our Batches</h4>
+          <ul class="footer-links">
+            <li>
+              <button onclick="navigateTo('courses')">AutoCAD 2D & 3D</button>
+            </li>
+            <li>
+              <button onclick="navigateTo('courses')">Autodesk Revit</button>
+            </li>
+            <li>
+              <button onclick="navigateTo('courses')">SolidWorks</button>
+            </li>
+            <li><button onclick="navigateTo('courses')">CATIA V5</button></li>
+            <li>
+              <button onclick="navigateTo('courses')">3ds Max & V-Ray</button>
+            </li>
+            <li>
+              <button onclick="navigateTo('courses')">Python & Data</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-copyright">
+        <p>
+          © 2025 Roshani Computer Institute. All rights reserved. | Autodesk
+          Authorized Reseller | GST: 24AANCR6249L17S
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ───────────────────────────────────────────────
+     PROFILE DRAWER
+  ──────────────────────────────────────────────── -->
+  <div class="drawer-backdrop" id="drawer-backdrop" onclick="closeDrawer()"></div>
+  <aside class="profile-drawer" id="profile-drawer" role="complementary" aria-label="Student Profile">
+    <div class="drawer-header">
+      <h3>Student Cabinet</h3>
+      <button class="btn-close-drawer" onclick="closeDrawer()" aria-label="Close drawer">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-body" id="drawer-body"></div>
+    <div class="drawer-footer">
+      <button class="btn-signout" onclick="signOut()">Sign Out</button>
+    </div>
+  </aside>
+
+  <!-- ───────────────────────────────────────────────
+     AUTH MODAL
+  ──────────────────────────────────────────────── -->
+  <div class="modal-overlay" id="auth-modal" data-mode="signin">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="auth-modal-title">Welcome Back</h3>
+        <button onclick="closeModal('auth-modal')" class="btn-close-drawer" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="auth-form" id="auth-form" onsubmit="handleAuthSubmit(event)" novalidate>
+          <div class="form-group" id="auth-signup-extras" style="display: none">
+            <label for="auth-name">Full Name</label>
+            <input type="text" id="auth-name" placeholder="Your full name" />
+          </div>
+          <div class="form-group">
+            <label for="auth-email">Email Address *</label>
+            <input type="email" id="auth-email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="auth-password">Password *</label>
+            <input type="password" id="auth-password" placeholder="Enter password" required />
+          </div>
+          <button type="submit" class="btn-primary" id="auth-submit-btn" style="padding: 0.85rem; border-radius: 12px">
+            Sign In
+          </button>
+          <div class="auth-switch-text" id="auth-switch-text">
+            Don't have an account?
+            <button type="button" onclick="setAuthMode('signup')">
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────────────────────────────────────────
+     COURSE DETAIL MODAL
+  ──────────────────────────────────────────────── -->
+  <div class="modal-overlay" id="course-modal">
+    <div class="modal-box course-details-modal">
+      <div class="course-modal-banner">
+        <img id="course-modal-img" src="" alt="" />
+        <div class="course-modal-banner-overlay"></div>
+        <div class="course-modal-title-overlay">
+          <div style="
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                color: var(--accent-pw);
+                margin-bottom: 0.25rem;
+              " id="course-modal-cat"></div>
+          <h2 style="font-size: 22px; line-height: 1.2" id="course-modal-title"></h2>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="course-modal-details-grid">
+          <div class="modal-details-item">
+            <span class="lbl">Duration</span>
+            <span class="val" id="course-modal-duration"></span>
+          </div>
+          <div class="modal-details-item">
+            <span class="lbl">Level</span>
+            <span class="val" id="course-modal-level"></span>
+          </div>
+        </div>
+        <div style="
+              font-size: 13px;
+              color: var(--text-light);
+              margin-bottom: 1rem;
+            ">
+          Instructor:
+          <strong style="color: var(--text-dark)" id="course-modal-instructor"></strong>
+        </div>
+        <div class="syllabus-title">Course Syllabus</div>
+        <ul class="syllabus-list" id="course-modal-syllabus"></ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="closeModal('course-modal')">
+          Close
+        </button>
+        <button class="btn-primary" onclick="enrollFromModal()">
+          Enroll Now →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────────────────────────────────────────
+     TOAST CONTAINER
+  ──────────────────────────────────────────────── -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+  <!-- ───────────────────────────────────────────────
+     WHATSAPP FLOATING BUTTON
+  ──────────────────────────────────────────────── -->
+  <style>
+    .whatsapp-widget-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 99999;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .whatsapp-trigger-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .whatsapp-tooltip-bubble {
+      background: #ffffff;
+      color: #333333;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      animation: floatBubble 2s ease-in-out infinite alternate;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .whatsapp-float-btn {
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .whatsapp-trigger-wrap:hover .whatsapp-float-btn {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+    }
+
+    .whatsapp-notif-dot {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 12px;
+      height: 12px;
+      background: #ef4444;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+    }
+
+    @keyframes floatBubble {
+      0% {
+        transform: translateY(0px);
+      }
+
+      100% {
+        transform: translateY(-4px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .whatsapp-widget-container {
+        bottom: 16px;
+        right: 16px;
+      }
+
+      .whatsapp-tooltip-bubble {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
+
+  <div class="whatsapp-widget-container">
+    <a href="https://wa.me/919408788205" target="_blank" rel="noopener noreferrer" class="whatsapp-trigger-wrap">
+      <div class="whatsapp-tooltip-bubble">Need help?</div>
+      <div class="whatsapp-float-btn" aria-label="Open WhatsApp Chat">
+        <span class="whatsapp-notif-dot"></span>
+        <svg viewBox="0 0 448 512" width="24" height="24" fill="currentColor">
+          <path
+            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+      </div>
+    </a>
+  </div>
+
+  <script src="web.js?v=5"></script>
+</body>
+
+</html>
