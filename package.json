@@ -1,0 +1,10 @@
+{
+  "name": "roshani-ui-root",
+  "version": "1.0.0",
+  "description": "Static web server for Roshani UI",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}
