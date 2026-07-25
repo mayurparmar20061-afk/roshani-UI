@@ -61,6 +61,7 @@
       height: 64px;
       margin-bottom: 1rem;
       object-fit: contain;
+      filter: brightness(0) invert(1);
     }
 
     .login-container h2 {
@@ -159,6 +160,7 @@
     .sidebar-logo {
       height: 40px;
       object-fit: contain;
+      filter: brightness(0) invert(1);
     }
 
     .sidebar-brand h3 {
@@ -511,6 +513,11 @@
             👤 Registered Users
           </button>
         </li>
+        <li>
+          <button class="sidebar-menu-btn" onclick="switchTab('awards', this)">
+            🏆 Government Awards
+          </button>
+        </li>
       </ul>
       <div class="sidebar-footer">
         <button class="sidebar-menu-btn" onclick="logout()" style="color: var(--accent-red);">
@@ -558,6 +565,7 @@
             </select>
           </div>
           <div style="display: flex; gap: 0.5rem;">
+            <button class="btn-action" id="btn-add-award" onclick="openAddAwardModal()" style="background: var(--accent-teal); display: none;">+ Add Award</button>
             <button class="btn-action gold" onclick="exportCSV()">Export CSV</button>
             <button class="btn-action" onclick="clearAllData()" style="background: var(--accent-red);">Clear Log</button>
           </div>
@@ -588,6 +596,29 @@
       <div id="modal-content-details" style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem;">
         <!-- Details content -->
       </div>
+    </div>
+  </div>
+
+  <!-- Add Award Modal -->
+  <div class="modal" id="add-award-modal">
+    <div class="modal-box" style="max-width: 450px;">
+      <button class="modal-close" onclick="closeAddAwardModal()">×</button>
+      <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--text-main);">Add New Award / Approval</h3>
+      <form id="add-award-form" onsubmit="handleAddAwardSubmit(event)">
+        <div class="form-group" style="margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+          <label for="award-name" style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted);">Organization Name</label>
+          <input type="text" id="award-name" required placeholder="e.g. GIDC" style="width: 100%; padding: 0.85rem 1rem; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-main);">
+        </div>
+        <div class="form-group" style="margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+          <label for="award-logo" style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted);">Logo Image Link / Path</label>
+          <input type="text" id="award-logo" required placeholder="e.g. assets/gov_gidc.png" style="width: 100%; padding: 0.85rem 1rem; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-main);">
+        </div>
+        <div class="form-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+          <label for="award-desc" style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted);">Description</label>
+          <textarea id="award-desc" required placeholder="Details about this government approval..." style="width: 100%; padding: 0.85rem 1rem; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-main); font-family: var(--font-sans); min-height: 80px; resize: vertical;"></textarea>
+        </div>
+        <button type="submit" class="btn-action" style="background: var(--accent-teal); width: 100%; padding: 0.85rem; border: none; border-radius: var(--radius-md); color: white; font-weight: 700; cursor: pointer;">Save Award</button>
+      </form>
     </div>
   </div>
 
@@ -643,14 +674,23 @@
       btn.classList.add('active');
 
       const filterType = document.getElementById('filter-type');
+      const addAwardBtn = document.getElementById('btn-add-award');
+      
       if (tab === 'users') {
         document.getElementById('pane-title').textContent = 'Registered Student Users';
         document.getElementById('pane-desc').textContent = 'Overview of all student users registered on the website portal.';
         filterType.style.display = 'none';
+        if (addAwardBtn) addAwardBtn.style.display = 'none';
+      } else if (tab === 'awards') {
+        document.getElementById('pane-title').textContent = 'Government Awards & Approvals';
+        document.getElementById('pane-desc').textContent = 'Add and manage verified government approval logos and details displayed on the homepage.';
+        filterType.style.display = 'none';
+        if (addAwardBtn) addAwardBtn.style.display = 'inline-block';
       } else {
         document.getElementById('pane-title').textContent = 'Inquiries & Leads';
         document.getElementById('pane-desc').textContent = 'Manage your counseling bookings, course admissions, and contact messages.';
         filterType.style.display = 'block';
+        if (addAwardBtn) addAwardBtn.style.display = 'none';
       }
 
       renderCurrentData();
@@ -693,8 +733,8 @@
           const matchQuery = !query || 
                              l.name.toLowerCase().includes(query) || 
                              l.email.toLowerCase().includes(query) || 
-                             l.phone.toLowerCase().includes(query) || 
-                             l.course.toLowerCase().includes(query);
+                             (l.phone && l.phone.toLowerCase().includes(query)) || 
+                             (l.course && l.course.toLowerCase().includes(query));
           return matchType && matchQuery;
         });
 
@@ -720,7 +760,7 @@
           `;
           body.appendChild(tr);
         });
-      } else {
+      } else if (activeTab === 'users') {
         // Users Headers
         headers.innerHTML = `
           <th>Registration Date</th>
@@ -751,6 +791,63 @@
             <td><code style="font-family: monospace; background: var(--bg-primary); padding: 0.2rem 0.4rem; border-radius: 4px;">${u.pass}</code></td>
             <td>
               <button onclick="deleteUser(${index})" class="btn-delete">Delete</button>
+            </td>
+          `;
+          body.appendChild(tr);
+        });
+      } else if (activeTab === 'awards') {
+        // Awards Headers
+        headers.innerHTML = `
+          <th>Logo</th>
+          <th>Organization Name</th>
+          <th>Description</th>
+          <th>Action</th>
+        `;
+
+        const defaultGovLogos = [
+          { name: 'GIDC', src: 'assets/gov_gidc.png', height: '50px', description: "Registered and authorized government body supporting Roshani Technologies' educational pipelines and industrial engineering projects." },
+          { name: 'VUDA', src: 'assets/gov_vuda.png', height: '70px', description: "Vadodara Urban Development Authority certified approval for infrastructural design training and engineering compliance." },
+          { name: 'Govt. of India Science Sector', src: 'assets/gov_science.png', height: '45px', description: "National Science and Technology Council recognized education mapping for skill development." },
+          { name: 'ISRO', src: 'assets/gov_isro.png', height: '55px', description: "Indian Space Research Organisation affiliated research project support and industrial prototyping training." },
+          { name: 'Indian Railways', src: 'assets/gov_railways.png', height: '55px', description: "Ministry of Railways authorized vendor partnership and design training certification alignment." },
+          { name: 'Indian Maritime University', src: 'assets/gov_maritime.png', height: '60px', description: "Leading national maritime training institute partnership for port infrastructure and shipping design." },
+          { name: 'Government of India', src: 'assets/gov_india.png', height: '75px', description: "National level institutional authentication for skill development schemes and certifications." },
+          { name: 'Kaushalya Skill University', src: 'assets/gov_kaushalya.png', height: '85px', description: "Apex state skill university partnership for professional certification credit hours." },
+          { name: 'Sardar Sarovar Narmada', src: 'assets/gov_sardar_sarovar.png', height: '70px', description: "Sardar Sarovar Narmada Nigam Limited design and engineering software curriculum alignment." },
+          { name: 'Forest Department', src: 'assets/gov_forest.png', height: '60px', description: "State Forest Department GIS mapping and resource planning project partnerships." },
+          { name: 'Govt. of India Roads and Building', src: 'assets/gov_roads_buildings.png', height: '85px', description: "Roads and Buildings Department certified training partner for public works layout designs." },
+          { name: 'GUDC', src: 'assets/gov_gudc.png', height: '50px', description: "Gujarat Urban Development Company associated master planning and municipal CAD design training." },
+          { name: 'Govt. Town Planning', src: 'assets/gov_town_planning.png', height: '55px', description: "Town Planning and Valuation Department recognized curriculum for structural layouts." },
+          { name: 'GIDB', src: 'assets/gov_gidb.png', height: '55px', description: "Gujarat Infrastructure Development Board advisory board partnership for regional development modules." },
+          { name: 'AUDA', src: 'assets/gov_auda.png', height: '55px', description: "Ahmedabad Urban Development Authority authorized layout training partner." },
+          { name: 'GETCO', src: 'assets/gov_getco.png', height: '65px', description: "Gujarat Energy Transmission Corporation electrical sub-station and grid design training partner." }
+        ];
+
+        let awards = JSON.parse(localStorage.getItem('gov_logos'));
+        if (!awards) {
+          awards = defaultGovLogos;
+          localStorage.setItem('gov_logos', JSON.stringify(awards));
+        }
+
+        const filtered = awards.filter(a => {
+          return !query || 
+                 a.name.toLowerCase().includes(query) || 
+                 a.description.toLowerCase().includes(query);
+        });
+
+        if (filtered.length === 0) {
+          body.innerHTML = `<tr><td colspan="4" class="empty-state">No awards found. Click "+ Add Award" to create one!</td></tr>`;
+          return;
+        }
+
+        filtered.forEach((a, index) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td><div style="background: white; padding: 5px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 40px; border: 1px solid var(--border-color);"><img src="${a.src}" alt="${a.name}" style="max-height: 30px; max-width: 50px; object-fit: contain;"></div></td>
+            <td style="font-weight: 700;">${a.name}</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${a.description}">${a.description}</td>
+            <td>
+              <button onclick="deleteAward(${index})" class="btn-delete">Remove</button>
             </td>
           `;
           body.appendChild(tr);
@@ -826,12 +923,17 @@
       if (activeTab === 'leads') {
         csvContent += "Date,Type,Name,Email,Phone,Course/Subject,Details\n";
         items.forEach(i => {
-          csvContent += `"${i.date}","${i.type}","${i.name}","${i.email}","${i.phone}","${i.course}","${i.details ? i.details.replace(/"/g, '""') : ''}"\n`;
+          csvContent += `"${i.date}","${i.type}","${i.name}","${i.email}","${i.phone || ''}","${i.course || ''}","${i.details ? i.details.replace(/"/g, '""') : ''}"\n`;
         });
-      } else {
+      } else if (activeTab === 'users') {
         csvContent += "Registration Date,Name,Email,Password\n";
         items.forEach(i => {
           csvContent += `"${i.date}","${i.name}","${i.email}","${i.pass}"\n`;
+        });
+      } else {
+        csvContent += "Organization Name,Logo Source,Description\n";
+        items.forEach(i => {
+          csvContent += `"${i.name}","${i.src}","${i.description ? i.description.replace(/"/g, '""') : ''}"\n`;
         });
       }
 
@@ -843,6 +945,50 @@
       link.click();
       document.body.removeChild(link);
       showToast('Export file downloaded successfully');
+    }
+
+    function openAddAwardModal() {
+      document.getElementById('add-award-modal').style.display = 'flex';
+    }
+
+    function closeAddAwardModal() {
+      document.getElementById('add-award-modal').style.display = 'none';
+      document.getElementById('add-award-form').reset();
+    }
+
+    function handleAddAwardSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('award-name').value.trim();
+      const logo = document.getElementById('award-logo').value.trim();
+      const desc = document.getElementById('award-desc').value.trim();
+
+      if (!name || !logo || !desc) {
+        alert('All fields are required!');
+        return;
+      }
+
+      let awards = JSON.parse(localStorage.getItem('gov_logos')) || [];
+      awards.push({
+        name,
+        src: logo,
+        height: '60px',
+        description: desc
+      });
+
+      localStorage.setItem('gov_logos', JSON.stringify(awards));
+      closeAddAwardModal();
+      showToast('New government award added successfully!');
+      renderCurrentData();
+    }
+
+    function deleteAward(index) {
+      if (confirm('Are you sure you want to remove this government award?')) {
+        let awards = JSON.parse(localStorage.getItem('gov_logos')) || [];
+        awards.splice(index, 1);
+        localStorage.setItem('gov_logos', JSON.stringify(awards));
+        showToast('Award removed successfully');
+        renderCurrentData();
+      }
     }
   </script>
 </body>

@@ -662,54 +662,89 @@ const COMMITTEE = [
   {
     id: 'dipak',
     name: 'Dipak O. Shah',
-    role: 'Founder & Director',
+    role: 'DIRECTOR',
     avatar: 'https://roshani.net/wp-content/uploads/2024/07/image-removebg-preview-74.png',
-    bio: 'Visionary leader with 25+ years of experience in the CAD/BIM industry. Founded Roshani Computer Institute to bridge the gap between academia and industry-level technical training.',
-    achievements: ['Autodesk Authorized Instructor', 'BIM India Summit Speaker 2023', '15+ Government Project Partnerships', 'Trained 10,000+ Professionals']
+    bio: 'Providing premium engineering, design, analysis, and project management consultation. An industry leader committed to transforming governance and digital workflow.',
+    achievements: [
+      'Director - Roshani Technologies Pvt Ltd',
+      'Proprietor - Roshani Computer Services',
+      'President - Baroda Management Association (Year 2021-22)',
+      'Chairman - Computer Society of India (Year 2015-16)'
+    ],
+    credentials: 'Visionary Leader, Strategic Management',
+    mentorship: '40+ Years of Corporate & Educational Governance'
   },
   {
     id: 'jagruti',
     name: 'Jagruti D. Shah',
-    role: 'Co-Founder & Academic Head',
-    avatar: 'https://i0.wp.com/roshani.net/wp-content/uploads/2024/07/image-removebg-preview-2024-07-24T123048.984.png?w=433&ssl=1',
+    role: 'HR',
+    avatar: 'assets/jagruti_nobg.png',
     bio: 'Expert in curriculum design and student mentorship. Oversees all academic programs and ensures alignment with the latest industry demands and Autodesk certification standards.',
-    achievements: ['M.Tech in CAD/CAM', 'Revit BIM Certified Trainer', 'NAAC Curriculum Advisor', '500+ Students Placed']
+    achievements: [
+      'M.Tech in CAD/CAM',
+      'Revit BIM Certified Trainer',
+      'NAAC Curriculum Advisor',
+      '500+ Students Placed'
+    ]
   },
   {
     id: 'nachiket',
     name: 'Nachiket D. Shah',
-    role: 'Technical Director',
+    role: 'CEO',
     avatar: 'https://roshani.net/wp-content/uploads/2024/07/ca14d42f-d5e6-4d20-96ba-63b099dab2a5-removebg-preview.png',
-    bio: 'Specialist in mechanical CAD and manufacturing simulations. Leads advanced workshops in SolidWorks, CATIA and Grasshopper and spearheads the Institute\'s hackathon and robotics initiatives.',
-    achievements: ['CSWA & CSWE Certified', 'National Robotics Hackathon Organizer', 'Industrial R&D Consultant', 'Published Researcher']
+    bio: 'Spearheading product development, digital simulations, robotics architectures, and strategic technological expansions.',
+    achievements: [
+      'CEO - Roshani Technologies Pvt Ltd',
+      'Lead Automation and Advanced Solutions Strategist'
+    ],
+    credentials: 'Corporate Vision, Growth & Partnerships',
+    mentorship: 'Founder & Tech Innovator, Entrepreneurship Excellence'
   },
   {
     id: 'ujala',
     name: 'Ujala D. Shah',
-    role: 'Creative & Design Lead',
+    role: 'TECHNICAL DIRECTOR',
     avatar: 'https://roshani.net/wp-content/uploads/2024/07/image-removebg-preview-2024-07-24T123138.863.png',
-    bio: 'Leads the graphic design, multimedia and visualization departments. Her curriculum bridges technical precision with creative excellence, preparing students for both design studios and tech firms.',
-    achievements: ['Adobe Certified Expert', 'UI/UX Design Mentor', 'Featured in Design India 2024', 'Product Design Consultant']
+    bio: 'Driving software, CAD, analysis models, hardware testing, and technical system-level integrations.',
+    achievements: [
+      'Technical Director - Roshani Technologies Pvt Ltd',
+      'Chief Infrastructure & Hardware Design Architect'
+    ],
+    credentials: 'Lead Architect, Specialized Automation & Hardware Solutions',
+    mentorship: '15+ Years Designing Research & IoT Infrastructure'
+  },
+  {
+    id: 'roshni',
+    name: 'Roshni Parikh',
+    role: 'Chief Architect',
+    avatar: 'assets/roshni.png',
+    bio: 'Lead architectural strategist and BIM consultant with extensive expertise in sustainable design, master planning, and advanced structural modeling.',
+    achievements: ['Licensed Senior Architect', 'BIM & Sustainable Design Specialist', 'Council of Architecture Member', '100+ Commercial Projects']
   }
 ];
-const GOV_LOGOS = [
-  { name: 'GIDC', src: 'assets/gov_gidc.png', height: '50px' },
-  { name: 'VUDA', src: 'assets/gov_vuda.png', height: '70px' },
-  { name: 'Govt. of India Science Sector', src: 'assets/gov_science.png', height: '45px' },
-  { name: 'ISRO', src: 'assets/gov_isro.png', height: '55px' },
-  { name: 'Indian Railways', src: 'assets/gov_railways.png', height: '55px' },
-  { name: 'Indian Maritime University', src: 'assets/gov_maritime.png', height: '60px' },
-  { name: 'Government of India', src: 'assets/gov_india.png', height: '75px' },
-  { name: 'Kaushalya Skill University', src: 'assets/gov_kaushalya.png', height: '85px' },
-  { name: 'Sardar Sarovar Narmada', src: 'assets/gov_sardar_sarovar.png', height: '70px' },
-  { name: 'Forest Department', src: 'assets/gov_forest.png', height: '60px' },
-  { name: 'Govt. of India Roads and Building', src: 'assets/gov_roads_buildings.png', height: '85px' },
-  { name: 'GUDC', src: 'assets/gov_gudc.png', height: '50px' },
-  { name: 'Govt. Town Planning', src: 'assets/gov_town_planning.png', height: '55px' },
-  { name: 'GIDB', src: 'assets/gov_gidb.png', height: '55px' },
-  { name: 'AUDA', src: 'assets/gov_auda.png', height: '55px' },
-  { name: 'GETCO', src: 'assets/gov_getco.png', height: '65px' }
+const defaultGovLogos = [
+  { name: 'GIDC', src: 'assets/gov_gidc.png', height: '50px', description: "Registered and authorized government body supporting Roshani Technologies' educational pipelines and industrial engineering projects." },
+  { name: 'VUDA', src: 'assets/gov_vuda.png', height: '70px', description: "Vadodara Urban Development Authority certified approval for infrastructural design training and engineering compliance." },
+  { name: 'Govt. of India Science Sector', src: 'assets/gov_science.png', height: '45px', description: "National Science and Technology Council recognized education mapping for skill development." },
+  { name: 'ISRO', src: 'assets/gov_isro.png', height: '55px', description: "Indian Space Research Organisation affiliated research project support and industrial prototyping training." },
+  { name: 'Indian Railways', src: 'assets/gov_railways.png', height: '55px', description: "Ministry of Railways authorized vendor partnership and design training certification alignment." },
+  { name: 'Indian Maritime University', src: 'assets/gov_maritime.png', height: '60px', description: "Leading national maritime training institute partnership for port infrastructure and shipping design." },
+  { name: 'Government of India', src: 'assets/gov_india.png', height: '75px', description: "National level institutional authentication for skill development schemes and certifications." },
+  { name: 'Kaushalya Skill University', src: 'assets/gov_kaushalya.png', height: '85px', description: "Apex state skill university partnership for professional certification credit hours." },
+  { name: 'Sardar Sarovar Narmada', src: 'assets/gov_sardar_sarovar.png', height: '70px', description: "Sardar Sarovar Narmada Nigam Limited design and engineering software curriculum alignment." },
+  { name: 'Forest Department', src: 'assets/gov_forest.png', height: '60px', description: "State Forest Department GIS mapping and resource planning project partnerships." },
+  { name: 'Govt. of India Roads and Building', src: 'assets/gov_roads_buildings.png', height: '85px', description: "Roads and Buildings Department certified training partner for public works layout designs." },
+  { name: 'GUDC', src: 'assets/gov_gudc.png', height: '50px', description: "Gujarat Urban Development Company associated master planning and municipal CAD design training." },
+  { name: 'Govt. Town Planning', src: 'assets/gov_town_planning.png', height: '55px', description: "Town Planning and Valuation Department recognized curriculum for structural layouts." },
+  { name: 'GIDB', src: 'assets/gov_gidb.png', height: '55px', description: "Gujarat Infrastructure Development Board advisory board partnership for regional development modules." },
+  { name: 'AUDA', src: 'assets/gov_auda.png', height: '55px', description: "Ahmedabad Urban Development Authority authorized layout training partner." },
+  { name: 'GETCO', src: 'assets/gov_getco.png', height: '65px', description: "Gujarat Energy Transmission Corporation electrical sub-station and grid design training partner." }
 ];
+let GOV_LOGOS = JSON.parse(localStorage.getItem('gov_logos'));
+if (!GOV_LOGOS) {
+  GOV_LOGOS = defaultGovLogos;
+  localStorage.setItem('gov_logos', JSON.stringify(GOV_LOGOS));
+}
 const PARTNERS = [
   { file: 'assets/partner_navrachana.png', name: 'Navrachana University' },
   { file: 'assets/partner_gtu.png', name: 'GTU' },
@@ -819,7 +854,7 @@ function navigateTo(tab, scroll = true) {
     }
   }
   // Lazy renders
-  if (tab === 'home') { renderHomePartners(); renderHomeCourses(); }
+  if (tab === 'home') { renderHomePartners(); renderHomeCourses(); renderHomeGovGrid(); }
   if (tab === 'courses') {
     const q = document.getElementById('course-search')?.value || '';
     renderDirectory(q, activeFilter);
@@ -1070,10 +1105,6 @@ function courseCardHTML(c) {
         <span class="course-icon-symbol">${iconData.icon}</span>
       </div>
       <h3 class="course-title">${c.title}</h3>
-      <div class="course-instructor">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--bg-sec);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--accent-blue);">${c.instructor[0]}</div>
-        <span class="instructor-name">${c.instructor}</span>
-      </div>
       <div class="course-meta-tags">
         <span class="meta-tag">⏱ ${c.duration}</span>
         <span class="meta-tag">📊 ${c.level}</span>
@@ -1181,20 +1212,43 @@ function setCommitteeMember(id) {
   // Render card
   const card = document.getElementById('committee-card');
   const avatarContent = m.avatar
-    ? `<img src="${m.avatar}" alt="${m.name}" style="width:100%;height:100%;border-radius:20px;object-fit:cover;" loading="lazy">`
-    : `<div style="display:flex;align-items:center;justify-content:center;font-size:56px;font-weight:800;font-family:var(--font-heading);">${m.name[0]}</div>`;
+    ? `<img src="${m.avatar}" alt="${m.name}" style="width:100%;height:100%;border-radius:20px;object-fit:contain;position:relative;z-index:1;" loading="lazy">`
+    : `<div style="display:flex;align-items:center;justify-content:center;font-size:56px;font-weight:800;font-family:var(--font-heading);position:relative;z-index:1;">${m.name[0]}</div>`;
+  const extraBlocks = (m.credentials || m.mentorship) ? `
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:20px;margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.15);">
+        ${m.credentials ? `<div>
+          <div style="font-size:12px;font-weight:800;letter-spacing:1px;color:#facc15;text-transform:uppercase;margin-bottom:6px;">CREDENTIALS & BACKGROUND</div>
+          <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;text-shadow:0 1px 2px rgba(0,0,0,0.5);">${m.credentials}</div>
+        </div>` : ''}
+        ${m.mentorship ? `<div>
+          <div style="font-size:12px;font-weight:800;letter-spacing:1px;color:#facc15;text-transform:uppercase;margin-bottom:6px;">MENTORSHIP EXPERIENCE</div>
+          <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;text-shadow:0 1px 2px rgba(0,0,0,0.5);">${m.mentorship}</div>
+        </div>` : ''}
+      </div>
+  ` : '';
+
   card.innerHTML = `
     <div class="committee-card-decor"></div>
-    <div style="width:220px;height:280px;border-radius:20px;border:3px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.15);flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:0 auto;">${avatarContent}</div>
+    <div style="width:230px;height:290px;border-radius:20px;border:3px solid rgba(255,255,255,0.2);background: radial-gradient(circle, rgba(37, 99, 235, 0.45) 0%, rgba(37, 99, 235, 0.1) 60%, rgba(255, 255, 255, 0.05) 100%);flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:0 auto;position:relative;box-shadow: 0 10px 25px rgba(0,0,0,0.3);">${avatarContent}</div>
     <div class="committee-details">
       <div>
-        <h3>${m.name}</h3>
-        <p class="role">${m.role}</p>
+        <h3 style="font-size: 2rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; text-shadow: 0 2px 4px rgba(0,0,0,0.4);">${m.name}</h3>
+        <p class="role" style="font-size: 1.1rem; font-weight: 800; color: #facc15; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem;">${m.role}</p>
       </div>
-      <p class="bio">${m.bio}</p>
-      <ul class="committee-list">
-        ${m.achievements.map(a => `<li>${a}</li>`).join('')}
-      </ul>
+      
+      <div style="margin-bottom: 1.2rem;">
+        <div style="font-size: 12px; font-weight: 800; letter-spacing: 1px; color: #facc15; text-transform: uppercase; margin-bottom: 8px;">ROLES & LEADERSHIP HANDLES</div>
+        <ul class="committee-list" style="display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none;">
+          ${m.achievements.map(a => `<li style="font-size: 0.98rem; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 8px; text-shadow: 0 1px 2px rgba(0,0,0,0.5);"><span style="color:#facc15;font-size:1.1rem;">✦</span> ${a}</li>`).join('')}
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 1.2rem; background: rgba(0,0,0,0.25); padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+        <div style="font-size: 12px; font-weight: 800; letter-spacing: 1px; color: #facc15; text-transform: uppercase; margin-bottom: 6px;">ABOUT</div>
+        <p class="bio" style="font-size: 0.98rem; font-weight: 500; color: #f8fafc; line-height: 1.6; margin: 0; text-shadow: 0 1px 2px rgba(0,0,0,0.4);">${m.bio}</p>
+      </div>
+
+      ${extraBlocks}
     </div>`;
 }
 // ──────────────────────────────────────────────────────────
@@ -1212,11 +1266,43 @@ function renderGovGrid() {
     el.style.display = 'flex';
     el.style.alignItems = 'center';
     el.style.justifyContent = 'center';
+    el.style.cursor = 'pointer';
+    el.onclick = () => showGovDetail(g);
     el.innerHTML = `
       <img src="${g.src}" alt="${g.name}" style="height: ${g.height}; max-height: none; width: auto; object-fit: contain;" loading="lazy">
     `;
     grid.appendChild(el);
   });
+}
+// ──────────────────────────────────────────────────────────
+// Home — Government Approvals Grid
+// ──────────────────────────────────────────────────────────
+function renderHomeGovGrid() {
+  const grid = document.getElementById('home-gov-logos-grid');
+  if (!grid || grid.dataset.rendered) return;
+  grid.dataset.rendered = '1';
+  GOV_LOGOS.forEach(g => {
+    const el = document.createElement('div');
+    el.className = 'gov-card';
+    el.title = g.name;
+    el.style.minHeight = '120px';
+    el.style.display = 'flex';
+    el.style.alignItems = 'center';
+    el.style.justifyContent = 'center';
+    el.style.cursor = 'pointer';
+    el.onclick = () => showGovDetail(g);
+    el.innerHTML = `
+      <img src="${g.src}" alt="${g.name}" style="height: ${g.height}; max-height: none; width: auto; object-fit: contain;" loading="lazy">
+    `;
+    grid.appendChild(el);
+  });
+}
+function showGovDetail(g) {
+  document.getElementById('gov-modal-img').src = g.src;
+  document.getElementById('gov-modal-img').alt = g.name;
+  document.getElementById('gov-modal-title').textContent = g.name;
+  document.getElementById('gov-modal-desc').textContent = g.description || 'Verified government approval supporting Roshani Technologies\' educational training programs.';
+  openModal('gov-modal');
 }
 // ──────────────────────────────────────────────────────────
 // About — University Partners (marquee)
@@ -1330,8 +1416,29 @@ function closeModal(id) {
   document.getElementById(id)?.classList.remove('open');
   if (id === 'auth-modal') {
     unlockScroll();
+    document.getElementById('auth-form')?.reset();
   }
 }
+// ──────────────────────────────────────────────────────────
+// Auth — Password Toggle
+// ──────────────────────────────────────────────────────────
+function toggleAuthPasswordVisibility() {
+  const passInput = document.getElementById('auth-password');
+  const icon = document.getElementById('pass-eye-icon');
+  if (!passInput) return;
+  if (passInput.type === 'password') {
+    passInput.type = 'text';
+    if (icon) {
+      icon.innerHTML = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>`;
+    }
+  } else {
+    passInput.type = 'password';
+    if (icon) {
+      icon.innerHTML = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
+    }
+  }
+}
+
 // ──────────────────────────────────────────────────────────
 // Auth — Sign In / Sign Up
 // ──────────────────────────────────────────────────────────
@@ -1342,60 +1449,122 @@ function setAuthMode(mode) {
   const signupExtras = document.getElementById('auth-signup-extras');
   const submitBtn = document.getElementById('auth-submit-btn');
   const switchText = document.getElementById('auth-switch-text');
+  const passLabel = document.getElementById('auth-pass-label');
+  const emailLabel = document.getElementById('auth-email-label');
+  const badge = document.getElementById('auth-modal-badge');
+  const disclaimer = document.getElementById('auth-disclaimer');
+
+  // SVG badge icons depending on state
+  const registerIcon = `
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <line x1="19" y1="8" x2="19" y2="14" />
+      <line x1="22" y1="11" x2="16" y2="11" />
+    </svg>
+  `;
+  const loginIcon = `
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+      <polyline points="10 17 15 12 10 7" />
+      <line x1="15" y1="12" x2="3" y2="12" />
+    </svg>
+  `;
+
   if (mode === 'signin') {
-    title.textContent = 'Welcome Back';
+    title.textContent = 'STUDENT SIGN IN';
+    if (badge) badge.innerHTML = loginIcon;
     signupExtras.style.display = 'none';
-    submitBtn.textContent = 'Sign In';
-    switchText.innerHTML = `Don't have an account? <button onclick="setAuthMode('signup')">Sign Up</button>`;
+    if (emailLabel) emailLabel.textContent = 'STUDENT E-MAIL ID';
+    if (passLabel) passLabel.textContent = 'PASSWORD';
+    submitBtn.textContent = 'SIGN IN';
+    if (disclaimer) disclaimer.style.display = 'none';
+    switchText.innerHTML = `Don't have an account? <button type="button" onclick="setAuthMode('signup')">Sign Up</button>`;
   } else {
-    title.textContent = 'Create Account';
-    signupExtras.style.display = 'contents';
-    submitBtn.textContent = 'Create Account';
-    switchText.innerHTML = `Already have an account? <button onclick="setAuthMode('signin')">Sign In</button>`;
+    title.textContent = 'REGISTER STUDENT PROFILE';
+    if (badge) badge.innerHTML = registerIcon;
+    signupExtras.style.display = 'block';
+    if (emailLabel) emailLabel.textContent = 'STUDENT E-MAIL ID';
+    if (passLabel) passLabel.textContent = 'CHOOSE PASSWORD';
+    submitBtn.textContent = 'CREATE ACCOUNT';
+    if (disclaimer) disclaimer.style.display = 'block';
+    switchText.innerHTML = `Already have an account? <button type="button" onclick="setAuthMode('signin')">Sign in</button>`;
   }
   document.getElementById('auth-modal').dataset.mode = mode;
 }
-function handleAuthSubmit(e) {
+async function handleAuthSubmit(e) {
   e.preventDefault();
   const mode = document.getElementById('auth-modal').dataset.mode;
-  const email = document.getElementById('auth-email').value;
+  const email = document.getElementById('auth-email').value.trim();
   const pass = document.getElementById('auth-password').value;
-  const name = document.getElementById('auth-name')?.value || email.split('@')[0];
-  if (!email || !pass) return;
+  const name = document.getElementById('auth-name')?.value.trim();
 
-  const users = JSON.parse(localStorage.getItem('users') || '[]');
-  if (mode === 'signup') {
-    const exists = users.find(u => u.email === email);
-    if (exists) {
-      toast('User already exists!', 'error');
-      return;
-    }
-    users.push({ name, email, pass, date: new Date().toLocaleString() });
-    localStorage.setItem('users', JSON.stringify(users));
-  } else {
-    // Basic verification for demo/local storage
-    const found = users.find(u => u.email === email && u.pass === pass);
-    if (!found && email !== 'admin@roshani.net') {
-      toast('Invalid credentials or sign up first!', 'error');
-      return;
-    }
+  if (!email || email === '') {
+    toast('Email cannot be empty.', 'error');
+    return;
+  }
+  if (!pass || pass === '') {
+    toast('Password cannot be empty.', 'error');
+    return;
+  }
+  if (mode === 'signup' && (!name || name === '')) {
+    toast('Name cannot be empty.', 'error');
+    return;
   }
 
-  currentUser = {
-    name: mode === 'signup' ? name : (users.find(u => u.email === email)?.name || email.split('@')[0]),
-    email,
-    studentId: generateStudentId(),
-    points: 100,
-    badges: ['Early Joiner', 'Roshani Scholar'],
-    courses: [],
-    joinDate: formatDate()
-  };
-  updateHeaderUser();
-  closeModal('auth-modal');
-  toast(`Welcome, ${currentUser.name}! +100 pts awarded 🎉`);
+  const submitBtn = document.getElementById('auth-submit-btn');
+  const originalBtnText = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = mode === 'signup' ? 'Registering...' : 'Signing In...';
+
+  try {
+    const apiBase = window.location.origin.includes(':5000') ? '' : 'http://localhost:5000';
+    const endpoint = mode === 'signup' ? '/api/auth/register' : '/api/auth/login';
+    
+    const bodyData = mode === 'signup' 
+      ? { name, email, password: pass }
+      : { email, password: pass };
+
+    const res = await fetch(`${apiBase}${endpoint}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(bodyData)
+    });
+
+    const data = await res.json();
+    if (!res.ok || !data.success) {
+      throw new Error(data.error || 'Authentication failed');
+    }
+
+    if (data.token) {
+      localStorage.setItem('token', data.token);
+    }
+
+    currentUser = {
+      name: data.user.name,
+      email: data.user.email,
+      studentId: generateStudentId(),
+      points: 100,
+      badges: ['Early Joiner', 'Roshani Scholar'],
+      courses: [],
+      joinDate: formatDate()
+    };
+
+    updateHeaderUser();
+    closeModal('auth-modal');
+    toast(`Welcome, ${currentUser.name}! 🎉`);
+  } catch (error) {
+    toast(error.message || 'An error occurred during authentication.', 'error');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalBtnText;
+  }
 }
 function signOut() {
   currentUser = null;
+  localStorage.removeItem('token');
   updateHeaderUser();
   closeDrawer();
   toast('Signed out successfully.');
@@ -1484,46 +1653,99 @@ function renderDrawer() {
 // ──────────────────────────────────────────────────────────
 // Admission Form
 // ──────────────────────────────────────────────────────────
-function handleAdmissionSubmit(e) {
+async function handleAdmissionSubmit(e) {
   e.preventDefault();
-  const name = document.getElementById('adm-name').value;
-  const email = document.getElementById('adm-email').value;
-  const phone = document.getElementById('adm-phone').value;
+  const name = document.getElementById('adm-name').value.trim();
+  const email = document.getElementById('adm-email').value.trim();
+  const phone = document.getElementById('adm-phone').value.trim();
   const course = document.getElementById('admission-course').value;
   const dob = document.getElementById('adm-dob').value;
   const qual = document.getElementById('adm-qualification').value;
-  if (!name || !email || !phone || !course) {
-    toast('Please fill all required fields.', 'info');
+  const address = document.getElementById('adm-address').value.trim();
+  const message = document.getElementById('adm-message').value.trim();
+
+  if (!name || !email || !phone || !course || !dob || !qual || !address) {
+    toast('Please fill all required fields.', 'error');
     return;
   }
 
-  // Save to leads in localStorage
-  const leads = JSON.parse(localStorage.getItem('leads') || '[]');
-  leads.push({
-    type: 'Admission',
-    name,
-    email,
-    phone,
-    course,
-    details: `DOB: ${dob || 'N/A'}, Qual: ${qual || 'N/A'}`,
-    date: new Date().toLocaleString()
-  });
-  localStorage.setItem('leads', JSON.stringify(leads));
-
-  // If user is logged in, add course to their profile
-  if (currentUser) {
-    if (!currentUser.courses.includes(course)) {
-      currentUser.courses.push(course);
-      currentUser.points += 50;
-      currentUser.badges.push('Enrolled Student');
-    }
-    updateHeaderUser();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    toast('Please enter a valid email address.', 'error');
+    return;
   }
-  // Show receipt
-  renderReceipt({ name, email, phone, course, dob, qual });
-  document.getElementById('admission-form-wrapper').style.display = 'none';
-  document.getElementById('admission-receipt').style.display = 'block';
-  toast('Enrollment successful! Your I-Card is ready. 🎓');
+
+  const cleanedPhone = phone.replace(/\s+/g, '').replace(/^\+91/, '');
+  if (!/^\d{10}$/.test(cleanedPhone)) {
+    toast('Mobile number must contain exactly 10 digits.', 'error');
+    return;
+  }
+
+  const submitBtn = document.getElementById('adm-submit-btn');
+  const originalBtnText = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+
+  try {
+    const apiBase = window.location.origin.includes(':5000') ? '' : 'http://localhost:5000';
+    const res = await fetch(`${apiBase}/api/admissions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        fullName: name,
+        email: email,
+        mobileNumber: cleanedPhone,
+        selectedCourse: course,
+        dateOfBirth: dob,
+        highestQualification: qual,
+        address: address,
+        message: message
+      })
+    });
+
+    const data = await res.json();
+    if (!res.ok || !data.success) {
+      throw new Error(data.error || 'Submission failed');
+    }
+
+    // Save to leads in localStorage
+    const leads = JSON.parse(localStorage.getItem('leads') || '[]');
+    leads.push({
+      type: 'Admission',
+      name,
+      email,
+      phone: cleanedPhone,
+      course,
+      details: `DOB: ${dob || 'N/A'}, Qual: ${qual || 'N/A'}, Address: ${address}`,
+      date: new Date().toLocaleString()
+    });
+    localStorage.setItem('leads', JSON.stringify(leads));
+
+    // If user is logged in, add course to their profile
+    if (currentUser) {
+      if (!currentUser.courses.includes(course)) {
+        currentUser.courses.push(course);
+        currentUser.points += 50;
+        currentUser.badges.push('Enrolled Student');
+      }
+      updateHeaderUser();
+    }
+    // Show receipt
+    renderReceipt({ name, email, phone: cleanedPhone, course, dob, qual });
+    document.getElementById('admission-form-wrapper').style.display = 'none';
+    document.getElementById('admission-receipt').style.display = 'block';
+    
+    // Clear form
+    document.getElementById('admission-form').reset();
+    
+    toast('Your admission application has been submitted successfully. Our team will contact you soon.');
+  } catch (error) {
+    toast(error.message || 'An error occurred during submission. Please try again.', 'error');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalBtnText;
+  }
 }
 function renderReceipt({ name, email, phone, course, dob, qual }) {
   const id = generateStudentId();
