@@ -148,6 +148,11 @@ app.get('/api', (req, res) => {
   });
 });
 
+// Root route for Render health check
+app.get('/', (req, res) => {
+  res.status(200).send('Roshani DevLabs Backend Server is running successfully!');
+});
+
 // Error Handler Middleware
 app.use(errorHandler);
 
