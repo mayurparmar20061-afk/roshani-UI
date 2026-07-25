@@ -1518,7 +1518,7 @@ async function handleAuthSubmit(e) {
   submitBtn.textContent = mode === 'signup' ? 'Registering...' : 'Signing In...';
 
   try {
-    const apiBase = window.location.origin.includes(':5000') ? '' : 'http://localhost:5000';
+    const apiBase = 'https://roshani-ui-1.onrender.com';
     const endpoint = mode === 'signup' ? '/api/auth/register' : '/api/auth/login';
     
     const bodyData = mode === 'signup' 
@@ -1686,7 +1686,7 @@ async function handleAdmissionSubmit(e) {
   submitBtn.textContent = 'Submitting...';
 
   try {
-    const apiBase = window.location.origin.includes(':5000') ? '' : 'http://localhost:5000';
+    const apiBase = 'https://roshani-ui-1.onrender.com';
     const res = await fetch(`${apiBase}/api/admissions`, {
       method: 'POST',
       headers: {
